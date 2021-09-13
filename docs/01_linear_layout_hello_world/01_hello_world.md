@@ -8,6 +8,6 @@
 
 Berikut ini adalah hasil dari praktikum 1
 
-![Screenshot Hasil Percobaan](img/hasil.png)
+![Screenshot Hasil Percobaan](img/hasil.PNG)
 
 [contoh link](../../src\01_linear_layout_hello_world\app\src\main\res\layout\activity_main.xml)
