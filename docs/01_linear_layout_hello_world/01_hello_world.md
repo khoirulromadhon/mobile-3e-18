@@ -1,4 +1,4 @@
-# 01 - Setup Account
+# 01 - Linear Layout
 
 ## Tujuan Pembelajaran
 
