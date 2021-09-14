@@ -10,4 +10,4 @@ Berikut ini adalah hasil dari praktikum 1
 
 ![Screenshot Hasil Percobaan](img/hello_world.PNG)
 
-[source code](../../src/02_layout&activity\app\src\main\res\layout/activity_main.xml)
+[source code](../../src/02_layout&activity/app/src/main/res/layout/activity_main.xml)
