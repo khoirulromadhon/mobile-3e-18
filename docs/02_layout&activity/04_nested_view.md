@@ -10,4 +10,4 @@ Berikut ini adalah hasil dari praktikum 4
 
 ![Screenshot Hasil Percobaan](img/nested_view.PNG)
 
-[source code](../../src/02_layout&activity\app\src\main\res\layout/activity_nested_view.xml)
+[source code](../../src/02_layout&activity/app/src/main/res/layout/activity_nested_view.xml)

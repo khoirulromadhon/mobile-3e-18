@@ -3,4 +3,31 @@
     <string name="helloWorldText">Hello World</string>
     <string name="secondText">From strings.xml</string>
     <string name="startText">start learning</string>
+    <string name="successMessage">Welcome back, Khoirul!</string>
+    <string name="warningMessage">Warning! the caps lock key is on</string>
+    <string name="alertMessage">Your email is not registered!</string>
+    <string name="simpleText">Simple avatar</string>
+    <string name="userInfo">Enter your email and password to login</string>
+    <string name="hintEmail">Email</string>
+    <string name="hintPass">Password</string>
+    <string name="loginText">Login</string>
+    <string name="newAccountQuestion">New account?</string>
+    <string name="registerText">Register</string>
+    <string name="sample_button">Free Sample</string>
+    <string name="buy_button">Buy IDR 89.790</string>
+    <string name="contentText">Lorem ipsum dolor</string>
+    <string name="title">Aladdin (2019)</string>
+    <string name="publisher">Walt Disney Pictures</string>
+    <string name="description_book">Belle, a village girl, </string>
+    <string name="box1_text">Box 1</string>
+    <string name="box2_text">Box 2</string>
+    <string name="box3_text">Box 3</string>
+    <string name="box4_text">Box 4</string>
+    <string name="titleText">Score Board</string>
+    <string name="scoreTeam1_Text">3</string>
+    <string name="scoreTeam2_Text">0</string>
+    <string name="titleText1">Holidays are Coming</string>
+    <string name="saveButtonText">Save</string>
+    <string name="shareButtonText">Share</string>
+
 </resources>

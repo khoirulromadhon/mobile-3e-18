@@ -11,4 +11,4 @@ Berikut ini adalah hasil dari praktikum 5
 
 ![Screenshot Hasil Percobaan](img/simple_login.PNG)
 
-[source code](../../src/02_layout&activity\app\src\main\res\layout/activity_simple_login_page.xml)
+[source code](../../src/02_layout&activity/app/src/main/res/layout/activity_simple_login_page.xml)

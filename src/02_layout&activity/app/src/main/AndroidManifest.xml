@@ -9,7 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PemrogramanMobile">
-        <activity android:name=".String"></activity>
+        <activity android:name=".PhotoSharing"></activity>
+        <activity android:name=".ScoreBoard" />
+        <activity android:name=".GridBasicLayout" />
+        <activity android:name=".ModernEbookStore" />
+        <activity android:name=".PictureInPicture" />
+        <activity android:name=".BasicViewPosition" />
+        <activity android:name=".ModernLoginUI" />
+        <activity android:name=".ImageView" />
+        <activity android:name=".Colors" />
+        <activity android:name=".String" />
         <activity android:name=".SimpleLoginPage" />
         <activity android:name=".NestedView" />
         <activity android:name=".ExitLogin" />
