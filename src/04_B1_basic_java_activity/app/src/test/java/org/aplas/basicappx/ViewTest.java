@@ -1,4 +1,4 @@
-package org.aplas.colorgamex;
+package org.aplas.basicappx;
 
 import android.view.ViewGroup;
 
@@ -17,6 +17,9 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 public class ViewTest {
+    public static final String layoutName = "mainLayout";
+    public static final String appName  = "BasicAppX";
+
     protected void testCompletion(int prevElement, List<Class> elements, ViewGroup layout){
         //Error message
         String compNumberMsg = "Element(s) was missing";
@@ -69,13 +72,11 @@ public class ViewTest {
         return min + r.nextInt(max - min + 1);
     }
 
-    /*
-    public Object getFieldValue(Object obj, String fieldName) throws NoSuchFieldException,IllegalAccessException {
+    public Object getFieldValue(Object obj, String fieldName) throws NoSuchFieldException, IllegalAccessException {
         Field f = obj.getClass().getDeclaredField(fieldName);
         f.setAccessible(true);
         return f.get(obj);
     }
-    */
 
     public String getAccessName(int access) {
         if (access==Modifier.PUBLIC) {
@@ -92,7 +93,7 @@ public class ViewTest {
         Field f;
         try {
             f = activityClass.getDeclaredField(fieldName);
-            if (access>=0) assertEquals("Access to field \'"+fieldName+"\' must be "+getAccessName(access),f.getModifiers(),access);
+            assertEquals("Access to field \'"+fieldName+"\' must be "+getAccessName(access),f.getModifiers(),access);
             assertEquals("Type of field \'"+fieldName+"\' must be "+type.getSimpleName(), f.getType(), type);
             f.setAccessible(true);
             if (isNull) {
@@ -105,36 +106,12 @@ public class ViewTest {
         }
     }
 
-
-    public Object getFieldValue(Object obj,String fieldName) {
-        Class<?> activityClass = obj.getClass();
-        Field f;
-        try {
-            f = activityClass.getDeclaredField(fieldName);
-
-            f.setAccessible(true);
-            return f.get(obj);
-            //assertEquals("Value of field \'"+fieldName+"\' must be "+value.toString(), f.get(obj), value);
-        } catch(Exception e) {
-            return null;
-        }
-    }
-
-    public void testFieldValue(Object obj,String fieldName, Object value) {
-        Object actual = getFieldValue(obj,fieldName);
-        if (actual == null) {
-            assertTrue("Field "+fieldName+" is not declared!!",false);
-        } else {
-            assertEquals("Value of field \'"+fieldName+"\' must be "+value.toString(), actual, value);
-        }
-    }
-
     public void testMethod(Object obj,String methodName, int access, Class[] params, Class<?> returnType) {
         Class<?> activityClass = obj.getClass();
         Method m;
         try {
             m = activityClass.getDeclaredMethod(methodName,params);
-            if (access>=0) assertEquals("Access to field \'"+methodName+"\' must be "+getAccessName(access),m.getModifiers(),access);
+            assertEquals("Access to field \'"+methodName+"\' must be "+getAccessName(access),m.getModifiers(),access);
             assertEquals("Type of return field \'"+methodName+"\' must be "+returnType.getSimpleName(), m.getReturnType(), returnType);
         } catch(Exception e) {
             assertTrue("Field "+methodName+" is not declared or parameters is wrong!!",false);
@@ -167,9 +144,5 @@ public class ViewTest {
         } catch(Exception e) {
             return null;
         }
-    }
-
-    public void testItemToValues() {
-       // assertThat();
     }
 }

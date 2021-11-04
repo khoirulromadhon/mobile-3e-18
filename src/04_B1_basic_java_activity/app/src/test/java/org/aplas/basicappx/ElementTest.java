@@ -1,22 +1,17 @@
-package org.aplas.colorgamex;
+package org.aplas.basicappx;
 
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.view.View;
 import android.widget.Adapter;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TextView;
-
-import org.robolectric.Shadows;
-import org.robolectric.shadows.ShadowTypeface;
 
 import java.util.List;
 
@@ -85,11 +80,6 @@ public class ElementTest extends ViewTest {
         String msg = msgHeader + "Element right padding is not suitable\n";
         testItem(expected,component.getPaddingRight(),msg,1);
     }
-
-    public void testPaddingBottom(int expected) {
-        String msg = msgHeader + "Element right padding is not suitable\n";
-        testItem(expected,component.getPaddingBottom(),msg,1);
-    }
     public void testPadding(int expected) {
         String msg = msgHeader + "Element padding is not suitable\n";
         testItem(expected,component.getPaddingTop(),msg,1);
@@ -116,20 +106,14 @@ public class ElementTest extends ViewTest {
         testItem(expected,((TextView)component).getText().toString(),msg,1);
     }
 
-    public void testTextFont(String expected) {
+    public void testTextFace(Typeface expected) {
         String msg = msgHeader + "Element text font is not suitable\n";
-        //testItem(expected,((TextView)component).getPaint().getTypeface(),msg,1);
-
-        ShadowTypeface shadow = Shadows.shadowOf(((TextView)component).getPaint().getTypeface());
-        testItem(expected,shadow.getFontDescription().familyName,msg,1);
+        testItem(expected,((TextView)component).getPaint().getTypeface(),msg,1);
     }
 
     public void testTextStyle(int expected) {
         String msg = msgHeader + "Element text style (bold/italic/normal) is not suitable\n";
-        //testItem(expected,((TextView)component).getPaint().getTypeface().getStyle(),msg,1);
-        ShadowTypeface shadow = Shadows.shadowOf(((TextView)component).getPaint().getTypeface());
-        testItem(expected,shadow.getFontDescription().style,msg,1);
-
+        testItem(expected,((TextView)component).getPaint().getTypeface().getStyle(),msg,1);
     }
 
     public void testTextColor(int expected) {
@@ -234,7 +218,7 @@ public class ElementTest extends ViewTest {
 
     public void testSelected(boolean expected) {
         String msg = msgHeader + "Element checked/selected value is not suitable\n";
-        if (component.getClass().equals(CheckBox.class)) {
+        if (component.getClass().equals(androidx.appcompat.widget.AppCompatCheckBox.class)) {
             testItem(expected,((CheckBox)component).isChecked(),msg,1);
         } else {
             testItem(expected,((RadioButton)component).isChecked(),msg,1);
@@ -282,64 +266,4 @@ public class ElementTest extends ViewTest {
         String msg = msgHeader + "Element visibility is not suitable\n";
         testItem(visibility,component.getVisibility(),msg,1);
     }
-
-    public void testOnClickMethod(String expected) {
-        String msg = msgHeader + "Element onClick is not suitable\n";
-        testItem(expected,((Button)component).hasOnClickListeners(),msg,3);
-    }
-
-    public void testTextAlignment(int expected) {
-        String msg = msgHeader + "Element text alignment is not suitable\n";
-        testItem(expected,component.getTextAlignment(),msg,1);
-    }
-
-    public void testCenterInParent() {
-        String msg = msgHeader + "Element centerInParent is not suitable\n";
-        testItem(-1,((RelativeLayout.LayoutParams)component.getLayoutParams()).getRules()[13],msg,1);
-    }
-
-    public void testAlignParentEnd() {
-        String msg = msgHeader + "Element alignParentEnd is not suitable\n";
-        /*
-        String x="";
-
-        for (int i=0; i<22; i++) {
-            x += ((RelativeLayout.LayoutParams)component.getLayoutParams()).getRules()[i]+"-";
-
-        }
-        testItem("",x,msg,1);
-        */
-        testItem(-1,((RelativeLayout.LayoutParams)component.getLayoutParams()).getRules()[11],msg,1);
-    }
-
-    public void testTextAppearance() {
-        //((TextView)component).getTextColors().
-    }
-
-    public void testProgressProgressBar(int expected) {
-        String msg = msgHeader + "Element progress in ProgressBar is not suitable\n";
-        testItem(expected,((ProgressBar)component).getProgress(),msg,1);
-    }
-
-    public void testMaxProgressBar(int expected) {
-        String msg = msgHeader + "Element progress in ProgressBar is not suitable\n";
-        testItem(expected,((ProgressBar)component).getMax(),msg,1);
-    }
-
-    public void testBgDrawable(String name, Drawable expected) {
-        String msg = msgHeader + "Element background drawable should be "+name+"\n";
-        GradientDrawable gExpected = (GradientDrawable)expected;
-        GradientDrawable gActual = (GradientDrawable)component.getBackground();
-
-        String eColors = gExpected.getColors()[0]+"-"+gExpected.getColors()[1]+"-"+gExpected.getColors()[2];
-        String aColors = gActual.getColors()[0]+"-"+gActual.getColors()[1]+"-"+gActual.getColors()[2];
-        testItem(eColors,aColors,msg,1);
-        testItem(gExpected.getCornerRadius(),gActual.getCornerRadius(),msg,1);
-        testItem(gExpected.getGradientRadius(),gActual.getGradientRadius(),msg,1);
-        testItem(gExpected.getGradientType(),gActual.getGradientType(),msg,1);
-        testItem(gExpected.getGradientCenterX(),gActual.getGradientCenterX(),msg,1);
-        testItem(gExpected.getGradientCenterY(),gActual.getGradientCenterY(),msg,1);
-    }
-
-
 }

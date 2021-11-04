@@ -1,4 +1,4 @@
-package org.aplas.colorgamex;
+package org.aplas.basicappx;
 
 import android.content.res.Resources;
 
@@ -13,12 +13,6 @@ public class ResourceTest extends ViewTest {
         int resId = resource.getIdentifier(name, "string", getClass().getPackage().getName());
         testItem(0,resId,"String "+name+" id is not exist",2);
         testItem(expected,resource.getString(resId),"String "+name+" value is not valid",1);
-    }
-
-    public void testIntegerResource(String name,int expected) {
-        int resId = resource.getIdentifier(name, "integer", getClass().getPackage().getName());
-        testItem(0,resId,"Integer "+name+" id is not exist",2);
-        testItem(expected,resource.getString(resId),"Integer "+name+" value is not valid",1);
     }
 
     public void testStringArrayResource(String name,String[] expected) {
@@ -64,11 +58,4 @@ public class ResourceTest extends ViewTest {
         testItem(0,resId,"Drawable "+name+" id is not exist",2);
         //testItem(expected,resource.getDrawable(resId).,"Drawable "+expected+" value is not valid",1);
     }
-
-    public void testStyleResource(String name, int type, Object expected) {
-        int[] attrs ={type};
-        int resId = resource.getIdentifier(name, "style", getClass().getPackage().getName());
-        //TypedArray arrStyle = .obtainStyledAttributes(resId, attrs);
-    }
-
 }

@@ -1,4 +1,4 @@
-package org.aplas.colorgamex;
+package org.aplas.basicappx;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("org.aplas.colorgamex", appContext.getPackageName());
+        assertEquals("org.aplas.basicappx", appContext.getPackageName());
     }
 }
