@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">LatihanRetrofit</string>
+    <string name="placeholder">Isi Username</string>
+    <string name="get_btn">Get Data Repo</string>
+</resources>
